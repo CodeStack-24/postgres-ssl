@@ -13,6 +13,8 @@ fi
 SSL_DIR="/var/lib/postgresql/data/certs"
 INIT_SSL_SCRIPT="/docker-entrypoint-initdb.d/init-ssl.sh"
 POSTGRES_CONF_FILE="$PGDATA/postgresql.conf"
+POSTGRES_USER="finaneasy"
+POSTGRES_DB="financeasy-production"
 
 # Regenerate if the certificate is not a x509v3 certificate
 if [ -f "$SSL_DIR/server.crt" ] && ! openssl x509 -noout -text -in "$SSL_DIR/server.crt" | grep -q "DNS:localhost"; then
